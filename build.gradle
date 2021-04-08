@@ -1,0 +1,55 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.4.1'
+    id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+    id 'war'
+}
+
+apply plugin : 'war'
+bootWar {
+    archiveBaseName="springboot" // 추가
+    archiveVersion="1.0.1-SNAPSHOT" // 추가
+}
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+// for Junit 5
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+
+    implementation('org.springframework.boot:spring-boot-starter-web')
+    // implementation('org.springframework.boot:spring-boot-starter-mustache')
+
+    implementation('org.apache.tomcat.embed:tomcat-embed-jasper')
+    implementation('javax.servlet:jstl:1.2')
+    // lombok
+    implementation('org.projectlombok:lombok')
+    implementation 'org.junit.jupiter:junit-jupiter:5.4.2'
+    annotationProcessor('org.projectlombok:lombok')
+    testImplementation('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation("org.mariadb.jdbc:mariadb-java-client")
+    implementation('com.h2database:h2')
+
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    //implementation('org.springframework.session:spring-session-jdbc')
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation("org.springframework.security:spring-security-test")
+
+    implementation('org.springframework.cloud:spring-cloud-starter-aws')
+
+    implementation group: 'org.springframework.cloud', name: 'spring-cloud-starter-aws', version: '2.2.1.RELEASE'
+
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.3.0'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
