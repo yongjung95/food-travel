@@ -1,4 +1,6 @@
-# food-travel Dashboard (최신화 2021/03/31)
+# food-travel Dashboard (최신화 2021/04/09)
+
+### properties 파일을 잘못 커밋해 저장소를 초기화하였다...
 
 ### 주소
 
