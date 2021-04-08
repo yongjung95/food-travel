@@ -7,8 +7,8 @@ plugins {
 
 apply plugin : 'war'
 bootWar {
-    archiveBaseName="springboot" // 추가
-    archiveVersion="1.0.1-SNAPSHOT" // 추가
+    archiveBaseName="food-travel" // 추가
+    archiveVersion="1.0.2-SNAPSHOT" // 추가
 }
 sourceCompatibility = 1.8
 
