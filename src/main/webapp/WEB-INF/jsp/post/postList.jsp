@@ -189,20 +189,13 @@
         });
 
     }
-    if (navigator.userAgent.indexOf('iPhone') != -1)
-    {
-        setTimeout(scrollTo, 0, 0, $(window).scrollTop() + 30);
-    }else{
-        window.scrollTo(0, $(window).scrollTop() + 30);
-    }
+
 
 
     window.onscroll = function(e) {
 
         //추가되는 임시 콘텐츠
         //window height + window scrollY 값이 document height보다 클 경우,
-
-
         if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
             //실행할 로직 (콘텐츠 추가)
             if (!pagingLast) {
