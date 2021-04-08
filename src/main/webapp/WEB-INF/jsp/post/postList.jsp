@@ -190,10 +190,12 @@
 
     }
 
-    $(window).scroll(function () {   //스크롤이 최하단 으로 내려가면 리스트를 조회하고 page를 증가시킨다.
 
-        if ($(window).scrollTop() + $('#banner').height() == $(window).height()) {
-            console.log('여기');
+    window.onscroll = function(e) {
+        //추가되는 임시 콘텐츠
+        //window height + window scrollY 값이 document height보다 클 경우,
+        if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            //실행할 로직 (콘텐츠 추가)
             if (!pagingLast) {
                 if (selectValue == 'hit') {
                     $.ajax({
@@ -252,7 +254,7 @@
                 }
             }
         }
-    });
+    };
 
     function addList(postDtoList){
         for (var i = 0; i < postDtoList.length; i++) {
