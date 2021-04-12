@@ -181,7 +181,7 @@
                 cache: false,
                 dataType: "json",
                 data: {
-                    nickname : nickname
+                    nickName : nickname
                 },
                 success: function(data){
                     var result = data.result;
