@@ -20,7 +20,7 @@ public class Favorite extends BaseTimeEntity {
     @ManyToOne(cascade = CascadeType.DETACH, fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne(cascade = {CascadeType.DETACH} , fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {CascadeType.DETACH} , fetch = FetchType.LAZY)
     private Post post;
 
     @Builder

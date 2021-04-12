@@ -85,8 +85,8 @@ public class IndexController {
     private String myFavoriteList (Model model){
         getSession(model);
 
-        UserDto userDto = userService.getSessionUser((UserDto) httpSession.getAttribute("userDto"));
-        List<PostDto> postDtoList = postService.getFavoriteList(userDto);
+        //UserDto userDto = userService.getSessionUser((UserDto) httpSession.getAttribute("userDto"));
+        List<PostDto> postDtoList = postService.getFavoriteList((UserDto) httpSession.getAttribute("userDto"));
 
         if ( postDtoList.size() > 0 ){
             model.addAttribute("postDtoList",postDtoList);
@@ -148,8 +148,9 @@ public class IndexController {
     // 세션에 있는 유저 정보 가져오기.
     private void getSession(Model model){
         userDto = (UserDto) httpSession.getAttribute("userDto");
-
+        System.out.println("test1");
         if (userDto != null){
+            System.out.println("test2");
            model.addAttribute("sessionUser",userService.getSessionUser(userDto));
         }
 

@@ -49,7 +49,7 @@ public class Post extends BaseTimeEntity {
     @OneToMany(cascade = { CascadeType.DETACH,CascadeType.REMOVE },mappedBy = "post")
     private List<Image> imageList;
 
-    @OneToMany(cascade = { CascadeType.DETACH,CascadeType.REMOVE }, mappedBy = "post", fetch = FetchType.EAGER)
+    @OneToMany(cascade = { CascadeType.DETACH,CascadeType.REMOVE }, mappedBy = "post", fetch = FetchType.LAZY)
     private List<Favorite> favorite;
 
 
