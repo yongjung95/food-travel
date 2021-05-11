@@ -1,4 +1,6 @@
-# food-travel Dashboard (최신화 2021/04/12)
+# food-travel Dashboard (최신화 2021/05/11)
+
+### JPA 강의를 듣고 리팩토링 예정
 
 ### properties 파일을 잘못 커밋해 저장소를 초기화하였다...
 
